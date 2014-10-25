@@ -98,7 +98,7 @@ confirm: <input type="text" name="confirm"/> <br>
 	$email
 	$password
 	$confirm
-	$date
+	$datecb
 </pre>
 
 </html>
