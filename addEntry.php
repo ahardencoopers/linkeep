@@ -22,7 +22,7 @@ $link;
 $tags;
 $arrTags = array(0 => "no tags");
 $arrTemp = array(0 => "");
-
+$idTemp;
 
 if(isset($_POST['logout']) )
 {
@@ -72,6 +72,39 @@ if(isset($_POST['title']) && isset($_POST['tags']))
 	$result1 = mysql_query($query1);
 	if(!$result1) die ("Database access failed:" . mysql_error());
 	
+	for($j = 1; $j < sizeof($arrTags); $j++)
+	{
+		$query2 = "INSERT INTO `tags`(`content`) 
+		VALUES ('$arrTags[$j]')";
+		
+		$result2 = mysql_query($query2);
+		if(!$result2) echo "";
+	}
+	
+	
+	for($j = 1; $j < sizeof($arrTags); $j++)
+	{
+		$queryTemp = "SELECT id FROM entries WHERE userFK='$username' AND 
+			date='$date'";
+		
+		$resultTemp = mysql_query($queryTemp);
+		if(!$resultTemp) echo "queryTemp failed";
+		$idTemp = mysql_fetch_row($resultTemp);
+		
+	
+		$query3 = "INSERT INTO `mapEntryTag`(`idEntry`, `contentTag`) VALUES ('$idTemp','$arrTags[$j]')";
+		
+		$result3 = mysql_query($query3);
+		if(!$result3) echo "query 3 failed";
+	}
+	
+	for($k = 1; $k < sizeof($arrTags); $k++)
+	{
+		$query4 = "INSERT INTO `mapUserTag`(`nameUser`, `contentTag`) VALUES ('$username','$arrTags[$k]')";
+		
+		$result4 = mysql_query($query4);
+		if(!$result4) echo "query 4 failed";
+	}
 	$errorMessage = "Entry added succesfully";
 	
 }
