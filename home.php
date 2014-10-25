@@ -13,12 +13,14 @@ or die("Unable to select database: " . mysql_error());
 
 $username;
 $password;
+$flag;
 
 if(isset($_POST['logout']))
 {
 	$_SESSION['username'] = NULL;
 	$_SESSION['password'] = NULL;
 	echo "Logged out. Go to <a href=\"login.php\"> login </a> page.";
+	$flag = true;
 }
 
 if(isset($_SESSION['username']) && isset($_SESSION['password']))
@@ -53,6 +55,7 @@ echo <<< _END
 
 <body>
 <h1> Linkeep Home </h1>
+<h2> Welcome, $username.</h2>
 
 <form method="post" action"login.php">
 
@@ -87,7 +90,7 @@ _END;
 	
 	
 }
-else
+else if(!$flag)
 {
 	echo "not logged in, go to <a href=\"login.php\"> login </a> page.";
 }
