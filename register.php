@@ -83,23 +83,13 @@ email: <input type="text" name="email"/> <br>
 <br>
 <br>
 
-password: <input type="text" name="password"/> <br>
-confirm: <input type="text" name="confirm"/> <br>
+password: <input  type="password" type="text" name="password"/> <br>
+confirm password: <input  type="password"type="text" name="confirm"/> <br>
 
 <input type="submit">
 </form>
 
 </body>
-
-<pre>
-	Entered data
-	$username
-	$sex
-	$email
-	$password
-	$confirm
-	$datecb
-</pre>
 
 </html>
 

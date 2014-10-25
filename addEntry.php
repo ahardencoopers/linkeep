@@ -175,32 +175,6 @@ Tags: <input type="text" name="tags"/> <br>
 
 </form>
 
-<pre>
-	previously entered data:
-	$username;
-	$password;
-	$date
-	$title;
-	$comment;
-	$link;
-	$tags;
-	1:$arrTags[1];
-	2:$arrTags[2];
-	3:$arrTags[3];
-	4:$arrTags[4];
-	5:$arrTags[5];
-	6:$arrTags[6];
-	7:$arrTags[7];
-	8:$arrTags[8];
-	9:$arrTags[9];
-	10:$arrTags[10];
-	11:$arrTags[11];
-	12:$arrTags[12];
-	13:$arrTags[13];
-	14:$arrTags[14];
-	
-</pre>
-
 </body>
 </html>
 

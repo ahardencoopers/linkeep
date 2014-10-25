@@ -60,7 +60,7 @@ echo <<< _END
 
 <form method="post" action"login.php">
 username: <input type="text" name="username" /> <br>
-password: <input type="text" name="password" /> <br>
+password: <input  type="password" type="text" name="password" /> <br>
 
 <input type="submit">
 </form>
