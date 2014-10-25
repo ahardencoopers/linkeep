@@ -139,7 +139,7 @@ echo <<< _END
 
 <html lang="en">
 <head>
-<link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
+<link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Chocolate" type="text/css">
 <title>LinkGit login</title>
 <title>LinkGit home</title>
 <style type="text/css">
@@ -151,9 +151,10 @@ div{
  width: 290px;}
  
  
+ 
     </style>
 </head>
-
+<div id="bg">
 <body>
 <h1> LinkGit Home </h1>
 <h2> Welcome, $username.</h2>
@@ -204,6 +205,7 @@ Tags: <input type="text" name="tags"/> <br>
 </form>
 
 </body>
+</div>
 </html>
 
 _END;

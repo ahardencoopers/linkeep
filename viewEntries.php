@@ -57,7 +57,7 @@ echo <<< _END
 
 <html lang="en">
 <head>
-<link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
+<link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Chocolate" type="text/css">
 
 <title>linkeep home</title>
 
