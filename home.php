@@ -62,6 +62,15 @@ echo <<< _END
 
 </form>
 
+<ul>
+  <li><a href="addEntry.php">Add entry </a></li>
+  <li><a href="editEntries.php">Edit entries </a></li>
+  <li><a href="searchEntries.php">Search entries </a></li>
+  <li><a href="searchUsers.php">Search users </a></li>
+</ul>
+
+
+
 </body>
 </html>
 
@@ -80,7 +89,7 @@ _END;
 }
 else
 {
-	echo "not logged in";
+	echo "not logged in, go to <a href=\"login.php\"> login </a> page.";
 }
 
 
