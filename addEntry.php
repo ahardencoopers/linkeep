@@ -157,9 +157,8 @@ echo <<< _END
 
 <ul>
   <li><a href="addEntry.php">Add entry </a></li>
-  <li><a href="editEntries.php">Edit entries </a></li>
+  <li><a href="viewEntries.php">View entries </a></li>
   <li><a href="searchEntries.php">Search entries </a></li>
-  <li><a href="searchUsers.php">Search users </a></li>
 </ul>
 
 $errorMessage

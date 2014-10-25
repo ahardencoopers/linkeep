@@ -75,14 +75,28 @@ echo <<< _END
 
 <ul>
   <li><a href="addEntry.php">Add entry </a></li>
-  <li><a href="editEntries.php">Edit entries </a></li>
+  <li><a href="viewEntries.php">View entries </a></li>
   <li><a href="searchEntries.php">Search entries </a></li>
-  <li><a href="searchUsers.php">Search users </a></li>
 </ul>
 
 _END;
 
-$queryFetch1 = "SELECT id FROM entries WHERE userFK='$username'";
+echo 
+	"<table border=\"1\" width=\"100%\">
+        <col style=\"width:40%\">
+        <col style=\"width:30%\">
+        <col style=\"width:30\">
+        <thead>
+        <tr>
+                <th>Title</th>
+                <th>Comment</th>
+                <th>Link</th>
+                <th>Tags</th>
+        </tr>
+        </thead>
+        <tbody>";
+
+$queryFetch1 = "SELECT id,title,comment,link FROM entries WHERE userFK='$username'";
 $resultFetch1 = mysql_query($queryFetch1);
 if(!$resultFetch1) die ("Database access failed: " . mysql_error());
 
@@ -90,20 +104,37 @@ $numRowsFetch1 = mysql_num_rows($resultFetch1);
 
 for($i=0; $i<$numRowsFetch1; $i++)
 {
-	$idRowFetch1 = mysql_fetch_row($resultFetch1);
+	$rowFetch1 = mysql_fetch_row($resultFetch1);
 	
-	$queryFetch2 = "SELECT contentTag WHERE idEntry='$idRowFetch1[0]'";
+	$title = $rowFetch1[1];
+	$comment = $rowFetch1[2];
+	$link = $rowFetch1[3];
+	
+	$queryFetch2 = "SELECT contentTag FROM mapEntryTag WHERE idEntry='$rowFetch1[0]'";
 	$resultFetch2 = mysql_query($queryFetch2);
 	if(!$resultFetch2) die ("Database access failed: " . mysql_error());
 	
 	$numRowsFetch2 = mysql_num_rows($resultFetch2);
-	for($j=0; j<$numRowsFetch2; j++)
+	for($j=0; $j<$numRowsFetch2; $j++)
 	{
-		
+		$rowFetch2 = mysql_fetch_row($resultFetch2);
+		$arrTags[$j] = $rowFetch2[0];
 	}
+	
+	$tags = implode(',', $arrTags);
+	
+	echo"
+        
+        <tr>
+                <th>$title</th>
+                <td>$comment</td>
+                <td>$link</td>
+                <td>$tags</td>
+        </tr>";
 }
 
-
+echo "</tbody>
+</table>";
 
 echo <<< _END2
 
