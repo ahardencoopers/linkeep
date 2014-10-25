@@ -45,13 +45,13 @@ if(isset($_POST['username']) && isset($_POST['password']))
 
 echo <<< _END
 
-<!doctype html>	
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
 <head>
-
+<link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
 <title>linkeep login</title>
-
 </head>
 
 <body>

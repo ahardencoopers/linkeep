@@ -57,11 +57,13 @@ if(isset($_POST['date']))
 
 echo <<< _END
 
-<!doctype html>	
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
 <head>
-
+<link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
+<title>linkeep login</title>
 <title>linkeep register</title>
 
 </head>
@@ -88,6 +90,8 @@ confirm password: <input  type="password"type="text" name="confirm"/> <br>
 
 <input type="submit">
 </form>
+
+<a href="login.php">Go back</a>
 
 </body>
 

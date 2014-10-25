@@ -52,10 +52,12 @@ if(isset($_SESSION['username']) && isset($_SESSION['password']))
 		
 echo <<< _END
 
-<!doctype html>	
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
 
 <html lang="en">
 <head>
+<link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
 
 <title>linkeep home</title>
 
@@ -80,6 +82,20 @@ echo <<< _END
 </ul>
 
 _END;
+
+echo <<< _END3
+
+<style type="text/css">
+  table{
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  table td{
+    border: 1px solid black;
+  }
+</style>
+
+_END3;
 
 echo 
 	"<table border=\"1\" width=\"100%\">
