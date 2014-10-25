@@ -15,7 +15,6 @@ $errorMessage;
 
 $username;
 $password;
-$date = date("Y-m-d H:i:s");
 $title;
 $comment;
 $link;
@@ -23,6 +22,8 @@ $tags;
 $arrTags = array(0 => "no tags");
 $arrTemp = array(0 => "");
 $idTemp;
+
+$queryFetch = 
 
 if(isset($_POST['logout']) )
 {
@@ -92,7 +93,7 @@ if(isset($_POST['title']) && isset($_POST['tags']))
 		$idTemp = mysql_fetch_row($resultTemp);
 		
 	
-		$query3 = "INSERT INTO `mapEntryTag`(`idEntry`, `contentTag`) VALUES ('$idTemp[0]','$arrTags[$j]')";
+		$query3 = "INSERT INTO `mapEntryTag`(`idEntry`, `contentTag`) VALUES ('$idTemp','$arrTags[$j]')";
 		
 		$result3 = mysql_query($query3);
 		if(!$result3) echo "query 3 failed";
@@ -112,6 +113,7 @@ else
 {
 	$errorMessage = "Entry must have at least a title and 1 tag";
 }
+
 
 if(isset($_SESSION['username']) && isset($_SESSION['password']))
 {
@@ -164,9 +166,9 @@ echo <<< _END
 
 $errorMessage
 
-<form method="post" action"addEntry.php">
+<form method="post" action"editEntries.php">
 
-Title: <input type="text" name="title"/> <br>
+Title: <input type="text" name="title" values/> <br>
 Comment: <input type="text" name="comment"/> <br>
 link: <input type="text" name="link"/> <br>
 Tags: <input type="text" name="tags"/> <br>
@@ -222,6 +224,7 @@ else if(!$flag)
 {
 	echo "not logged in, go to <a href=\"login.php\"> login </a> page.";
 }
+
 
 
 
