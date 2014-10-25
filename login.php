@@ -1,6 +1,7 @@
 <?php
 
-require_once "dblog.php"
+require_once "dblog.php";
+require_once "security.php";
 
 $db_server = mysql_connect($db_hostname, $db_username, $db_password);
 
@@ -21,7 +22,10 @@ echo <<< _END
 </head>
 
 <body>
-<p> hello world</p>
+<h1> Linkeep! </h1>
+<h2> Keep track. share. discover</h2>
+
+<form>
 </body>
 </html>
 
