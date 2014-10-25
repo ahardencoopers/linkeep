@@ -142,7 +142,16 @@ echo <<< _END
 <link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
 <title>linkeep login</title>
 <title>linkeep home</title>
-
+<style type="text/css">
+    input {
+    float:right;
+    clear:both;
+}
+div{
+ width: 290px;}
+ 
+ 
+    </style>
 </head>
 
 <body>
@@ -151,9 +160,12 @@ echo <<< _END
 
 <form method="post" action"login.php">
 
+
 <input type="hidden" name="logout" value="">
 
+<div style="width:66px">
 <input type="submit" value="Logout">
+</div>
 
 </form>
 
@@ -167,13 +179,27 @@ $errorMessage
 
 <form method="post" action"addEntry.php">
 
+<div>
 Title: <input type="text" name="title"/> <br>
+</div>
+
+<div>
 Comment: <input type="text" name="comment"/> <br>
+</div>
+
+<div>
 link: <input type="text" name="link"/> <br>
+</div>
+
+<div>
 Tags: <input type="text" name="tags"/> <br>
+</div>
+
 <p>(Write 1 or more tags separated by commas, e.g.: horror,movie,halloween)</p>
 
+<div>
 <input type="submit" value="Add Entry">
+</div>
 
 </form>
 

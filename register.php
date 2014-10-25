@@ -42,7 +42,7 @@ if(isset($_POST['username']) && isset($_POST['email']))
 }
 else
 {
-echo "Form was filled incorrectly.";
+echo "";
 }
 
 if(isset($_POST['sex']))
@@ -65,7 +65,14 @@ echo <<< _END
 <link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
 <title>linkeep login</title>
 <title>linkeep register</title>
-
+<style type="text/css">
+    input {
+    float:right;
+    clear:both;
+}
+div{
+ width: 290px;}
+    </style>
 </head>
 
 <body>
@@ -74,21 +81,32 @@ echo <<< _END
 
 <form method="post" action"register.php">
 
+<div>
 username: <input type="text" name="username"/> <br>
-<br>
-Sex: <br>
+</div>
+
+<div>
+Sex:<br>
 <input type="radio" name="sex" value="male" />Male <br>
 <input type="radio" name="sex" value="female" /> Female <br>
-<br>
-<br>
-email: <input type="text" name="email"/> <br>
-<br>
-<br>
+</div>
 
-password: <input  type="password" type="text" name="password"/> <br>
+<div>
+email: <input type="text" name="email" style="text-align: right"/> <br>
+</div>
+
+<div>
+password:<input style="text-align: right" type="password" type="text" name="password"/> <br>
+</div>
+
+<div>
 confirm password: <input  type="password"type="text" name="confirm"/> <br>
+</div>
 
+<div>
 <input type="submit">
+</div>
+
 </form>
 
 <a href="login.php">Go back</a>
