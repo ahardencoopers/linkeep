@@ -14,10 +14,17 @@ or die("Unable to select database: " . mysql_error());
 $username;
 $password;
 
-if(isset($_POST['username']) && isset($_POST['password']))
+if(isset($_POST['logout']))
 {
-	$username = sanitizeString($_POST['username']);
-	$password = sanitizeString($_POST['password']);
+	$_SESSION['username'] = NULL;
+	$_SESSION['password'] = NULL;
+	echo "Logged out. Go to <a href=\"login.php\"> login </a> page.";
+}
+
+if(isset($_SESSION['username']) && isset($_SESSION['password']))
+{
+	$username = $_SESSION['username'];
+	$password = $_SESSION['password'];
 	
 	$query = "SELECT username, password FROM users WHERE username ='$username' 
 		AND password = '$password'";
@@ -30,19 +37,9 @@ if(isset($_POST['username']) && isset($_POST['password']))
 	
 	if($username == $row[0] && $password == $row[1])
 	{
-		echo "Login succesful, click <a href=\"home.php\"> here </a>";
 		$_SESSION["username"] = $username;
 		$_SESSION["password"] = $password;
-	}
-	else
-	{
-		echo "login information is incorrect";
-		$_SESSION["username"] = $username;
-		$_SESSION["password"] = $password;
-	}
-	
-}
-
+		
 echo <<< _END
 
 <!doctype html>	
@@ -50,25 +47,42 @@ echo <<< _END
 <html lang="en">
 <head>
 
-<title>linkeep login</title>
+<title>linkeep home</title>
 
 </head>
 
 <body>
-<h1> Linkeep! </h1>
-<h2> Keep track, share, discover.</h2>
+<h1> Linkeep Home </h1>
 
 <form method="post" action"login.php">
-username: <input type="text" name="username" /> <br>
-password: <input type="text" name="password" /> <br>
 
-<input type="submit">
+<input type="hidden" name="logout" value="">
+
+<input type="submit" value="Logout">
+
 </form>
-<a href="register.php">Sign Up</a>
+
 </body>
 </html>
 
 _END;
 
-?>
+	}
+	else
+	{
+		echo "Session timeout, please <a href=\"login.php\"> login </a> again.";
+		$_SESSION["username"] = $username;
+		$_SESSION["password"] = $password;
+	}
+	
+	
+	
+}
+else
+{
+	echo "not logged in";
+}
 
+
+
+?>
