@@ -63,8 +63,8 @@ echo <<< _END
 <html lang="en">
 <head>
 <link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
-<title>linkeep login</title>
-<title>linkeep register</title>
+<title>LinkGit login</title>
+<title>LinkGit register</title>
 <style type="text/css">
     input {
     float:right;

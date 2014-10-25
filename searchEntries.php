@@ -61,12 +61,12 @@ echo <<< _END
 <head>
 <link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
 
-<title>linkeep home</title>
+<title>LinkGit home</title>
 
 </head>
 
 <body>
-<h1> Linkeep Home </h1>
+<h1> LinkGit Home </h1>
 <h2> Welcome, $username.</h2>
 
 <form method="post" action"login.php">

@@ -51,11 +51,11 @@ echo <<< _END
 <html lang="en">
 <head>
 <link rel="stylesheet" href="http://www.w3.org/StyleSheets/Core/Traditional" type="text/css">
-<title>linkeep login</title>
+<title>LinkGeet login</title>
 </head>
 
 <body>
-<h1> Linkeep! </h1>
+<h1> LinkGit! </h1>
 <h2> Keep track, share, discover.</h2>
 
 <form method="post" action"login.php">
