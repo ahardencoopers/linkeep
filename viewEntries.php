@@ -61,6 +61,16 @@ echo <<< _END
 
 <title>linkeep home</title>
 
+<style type="text/css">
+  table{
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  table td{
+    border: 1px solid black;
+  }
+</style>
+
 </head>
 
 <body>
@@ -98,10 +108,10 @@ echo <<< _END3
 _END3;
 
 echo 
-	"<table border=\"1\" width=\"100%\">
-        <col>
-        <col>
-        <col>
+	"<table border=\"2\" width=\"100%\">
+        <col style=\"width:25%\">
+        <col style=\"width:30%\">
+        <col style=\"width:30\">
         <thead>
         <tr>
                 <th>Title</th>
