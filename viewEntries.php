@@ -152,7 +152,7 @@ for($i=0; $i<$numRowsFetch1; $i++)
 	echo"
         
         <tr>
-                <th>$title</th>
+                <td>$title</td>
                 <td>$comment</td>
                 <td>$link</td>
                 <td>$tags</td>
