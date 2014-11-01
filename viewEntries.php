@@ -99,9 +99,9 @@ _END3;
 
 echo 
 	"<table border=\"1\" width=\"100%\">
-        <col style=\"width:40%\">
-        <col style=\"width:30%\">
-        <col style=\"width:30\">
+        <col>
+        <col>
+        <col>
         <thead>
         <tr>
                 <th>Title</th>
