@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat /var/www/html/log.txt
+echo "" > log.txt
