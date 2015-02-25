@@ -1,3 +1,4 @@
 #ignore error log
 *.log
 .login.php.kate-swp
+log.txt
