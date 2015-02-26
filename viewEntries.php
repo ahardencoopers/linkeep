@@ -122,6 +122,8 @@ echo
         </thead>
         <tbody>";
 
+//Display entries
+
 $queryFetch1 = "SELECT id,title,comment,link FROM entries WHERE userFK='$username'";
 $resultFetch1 = mysql_query($queryFetch1);
 if(!$resultFetch1) die ("Database access failed: " . mysql_error());
@@ -148,6 +150,7 @@ for($i=0; $i<$numRowsFetch1; $i++)
 	}
 	
 	$tags = implode(',', $arrTags);
+	$arrTags = array(0 => "no tags");
 	
 	echo"
         
