@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+//Database connection
+
 require_once "dblog.php";
 require_once "security.php";
 
@@ -11,8 +13,9 @@ if(!$db_server) die ("Unable to connect to MySQL: " . mysql_error());
 mysql_select_db($db_database)
 or die("Unable to select database: " . mysql_error());
 
-$errorMessage;
+//Variables
 
+$errorMessage;
 $username;
 $password;
 $title;
@@ -23,6 +26,8 @@ $arrTags = array(0 => "no tags");
 $arrTemp = array(0 => "");
 $idTemp;
 
+//logout verification
+
 if(isset($_POST['logout']) )
 {
 	$_SESSION['username'] = NULL;
@@ -30,6 +35,8 @@ if(isset($_POST['logout']) )
 	echo "Logged out. Go to <a href=\"login.php\"> login </a> page.";
 	$flag = true;
 }
+
+//session verification
 
 if(isset($_SESSION['username']) && isset($_SESSION['password']))
 {
@@ -50,6 +57,8 @@ if(isset($_SESSION['username']) && isset($_SESSION['password']))
 		$_SESSION["username"] = $username;
 		$_SESSION["password"] = $password;
 		
+//Show page to logged user
+
 echo <<< _END
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
@@ -85,6 +94,7 @@ echo <<< _END
 
 </form>
 
+
 <ul>
   <li><a href="addEntry.php">Add entry </a></li>
   <li><a href="viewEntries.php">View entries </a></li>
@@ -106,6 +116,8 @@ echo <<< _END3
 </style>
 
 _END3;
+
+//Table markup
 
 echo 
 	"<table border=\"2\" width=\"100%\">
@@ -162,11 +174,12 @@ for($i=0; $i<$numRowsFetch1; $i++)
         </tr>";
 }
 
+//End table markup
+
 echo "</tbody>
 </table>";
 
 echo <<< _END2
-
 
 </body>
 </html>
@@ -175,6 +188,8 @@ _END2;
 
 
 	}
+	//Session timeout 
+
 	else
 	{
 		echo "Session timeout, please <a href=\"login.php\"> login </a> again.";
@@ -185,6 +200,7 @@ _END2;
 	
 	
 }
+//Non-logged users
 else if(!$flag)
 {
 	echo "not logged in, go to <a href=\"login.php\"> login </a> page.";

@@ -111,7 +111,7 @@ Search by tags: <input type="text" name="searchTag"/> <br>
 
 _END;
 
-
+//Search entries
 if(isset($_POST['searchTag']))
 {
 	
@@ -161,7 +161,7 @@ if(isset($_POST['searchTag']))
 	for($i = 0; $i < sizeof($arrTags); $i++)
 	{
 		$query1 = "SELECT title,comment,link,id FROM entries 
-			WHERE id IN (SELECT idEntry FROM mapEntryTag WHERE contentTag='$arrTags[$i]')";
+			WHERE id IN (SELECT idEntry FROM mapEntryTag WHERE contentTag='$arrTags[$i]') AND userFK='$username'";
 		$result1 = mysql_query($query1);
 		if(!$result1) die ("Database access failed:" . mysql_error());
 		
